@@ -28,10 +28,11 @@ int main(int argc, char** argv) {
     srand(time(0));
     int randNum;
     bool rollAgain = true;
+    string rollAgainChar;
     
     // Get, store, and output a team name
     cout << "What's your team name?" << endl;
-    cin >> teamName;
+    getline(cin, teamName);
     cout << teamName << endl;
     
     // loop through the game until the user stops rolling
@@ -77,8 +78,13 @@ int main(int argc, char** argv) {
             
     }
     // ask the user to continue by entering a 1 or 0
-    cout << "Roll again? Enter 1 to continue" << endl ;
-    cin >> rollAgain;
+    cout << "Roll again? Enter y to continue" << endl ;
+    cin >> rollAgainChar;
+    if (rollAgainChar == "y"){
+        rollAgain = true;
+    }else{
+        rollAgain = false;
+    }
     }while(rollAgain);
     
     return 0;
